@@ -2,18 +2,20 @@ import { useState } from "react";
 import { Phone, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { Link } from "react-router-dom";
+import logo from "@/assets/logo.png";
 
 export const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { label: "Начало", href: "#home" },
-    { label: "Погребални Услуги", href: "#services" },
-    { label: "Венци", href: "#wreaths" },
-    { label: "Траурни Венци, Пиафлори И Букети", href: "#flowers" },
-    { label: "Надгробни Паметници", href: "#monuments" },
-    { label: "Контакти", href: "#contacts" },
-    { label: "Блог", href: "#blog" },
+    { label: "Начало", href: "/" },
+    { label: "Погребални Услуги", href: "/funeral-services" },
+    { label: "Венци", href: "/wreaths" },
+    { label: "Траурни Венци, Пиафлори И Букети", href: "/flowers" },
+    { label: "Надгробни Паметници", href: "/monuments" },
+    { label: "Контакти", href: "/contact" },
+    { label: "Блог", href: "/blog" },
   ];
 
   return (
@@ -21,13 +23,9 @@ export const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo and Title */}
-          <div className="flex items-center gap-3">
-            <div className="text-2xl font-serif">🌲</div>
-            <div>
-              <h1 className="text-xl font-bold tracking-tight">Траурна Агенция Кипарис</h1>
-              <p className="text-xs text-muted-foreground">Траурна Агенция</p>
-            </div>
-          </div>
+          <Link to="/" className="flex items-center gap-3 hover:opacity-90 transition-opacity">
+            <img src={logo} alt="Кипарис лого" className="h-12 w-auto" />
+          </Link>
 
           {/* Phone - Desktop */}
           <div className="hidden lg:flex items-center gap-2">
@@ -51,13 +49,13 @@ export const Navigation = () => {
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center gap-6 pb-4">
           {navItems.map((item) => (
-            <a
+            <Link
               key={item.label}
-              href={item.href}
+              to={item.href}
               className="text-sm font-medium hover:text-secondary transition-colors duration-300"
             >
               {item.label}
-            </a>
+            </Link>
           ))}
         </div>
 
@@ -70,14 +68,14 @@ export const Navigation = () => {
         >
           <div className="py-4 space-y-3">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.label}
-                href={item.href}
+                to={item.href}
                 className="block text-sm font-medium hover:text-secondary transition-colors duration-300"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
             <div className="pt-3 border-t border-border">
               <a href="tel:0028465524" className="flex items-center gap-2 text-secondary font-semibold">

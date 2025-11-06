@@ -1,4 +1,4 @@
-import heroImage from "@/assets/hero-image.jpg";
+import heroImage from "@/assets/hero-sunset.jpg";
 import { Button } from "@/components/ui/button";
 
 export const Hero = () => {
@@ -8,7 +8,7 @@ export const Hero = () => {
       <div className="absolute inset-0 z-0">
         <img
           src={heroImage}
-          alt="Peaceful sunset over cemetery"
+          alt="Кипарис траурна агенция"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-primary/90 via-primary/80 to-primary/90" />
