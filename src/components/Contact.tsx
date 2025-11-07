@@ -17,7 +17,7 @@ export const Contact = () => {
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Адрес",
-      content: "София, България",
+      content: 'ул. "Професор Асен Златаров" №8, София',
     },
     {
       icon: <Mail className="w-6 h-6" />,
@@ -63,7 +63,7 @@ export const Contact = () => {
         <div className="max-w-4xl mx-auto">
           <div className="w-full h-[450px] rounded-lg overflow-hidden shadow-xl border border-border">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d186429.89199167983!2d23.199208!3d42.697866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40aa8682cb317bf5%3A0x400a01269bf5e60!2sSofia%2C%20Bulgaria!5e0!3m2!1sen!2s!4v1234567890"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2933.2!2d23.3206!3d42.6954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40aa85776f96dc15%3A0x123456789!2z0YPQuy4g4oCe0J_RgNC-0YTQtdGB0L7RgCDQkNGB0LXQvSDQl9C70LDRgtCw0YDQvtCy4oCcIOKEljgsINCh0L7RhNC40Y8!5e0!3m2!1sbg!2sbg!4v1234567890"
               width="100%"
               height="100%"
               style={{ border: 0 }}
