@@ -1,32 +1,35 @@
-import { Heart, Flower, Building2, Phone } from "lucide-react";
-import { ServiceCard } from "./ServiceCard";
-import wreathImage from "@/assets/wreath.jpg";
-import monumentImage from "@/assets/monument.jpg";
+import { Link } from "react-router-dom";
+import hearse from "@/assets/services/hearse.png";
+import cemetery from "@/assets/services/cemetery.png";
+import urn from "@/assets/services/urn.png";
+import monuments from "@/assets/services/monuments.png";
 
 export const Services = () => {
   const services = [
     {
-      icon: <Heart className="w-12 h-12" />,
-      title: "Превоз на Покойник",
-      description: "Професионален превоз на покойници с дискретност и уважение. Осигуряваме превоз на територията на цялата страна и в чужбина.",
+      image: hearse,
+      title: "Превоз на покойник",
+      description: "Дискретен и професионален превоз на покойник",
+      link: "/funeral-services"
     },
     {
-      icon: <Flower className="w-12 h-12" />,
+      image: cemetery,
       title: "Погребения",
-      description: "Пълна организация на погребални церемонии според традициите и желанията на семейството. Всички необходими документи и услуги.",
-      image: wreathImage,
+      description: "Пълна организация на погребението с внимание към всеки детайл",
+      link: "/funeral-services"
     },
     {
-      icon: <Building2 className="w-12 h-12" />,
+      image: urn,
       title: "Кремация",
-      description: "Организиране на кремация с професионализъм и уважение. Съдействие за всички формалности и церемонии.",
+      description: "Организация на кремация с пълно съдействие",
+      link: "/funeral-services"
     },
     {
-      icon: <Building2 className="w-12 h-12" />,
-      title: "Надгробни Паметници",
-      description: "Изработка и монтаж на качествени надгробни паметници от гранит и мрамор. Индивидуален дизайн според вашите желания.",
-      image: monumentImage,
-    },
+      image: monuments,
+      title: "Надгробни паметници",
+      description: "Изработка и монтаж на качествени паметници",
+      link: "/monuments"
+    }
   ];
 
   return (
@@ -40,7 +43,29 @@ export const Services = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
-            <ServiceCard key={index} {...service} />
+            <Link 
+              key={index} 
+              to={service.link}
+              className="group block"
+            >
+              <div className="bg-card rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-border">
+                <div className="aspect-[4/3] overflow-hidden bg-muted">
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold mb-2 text-card-foreground group-hover:text-primary transition-colors">
+                    {service.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm">
+                    {service.description}
+                  </p>
+                </div>
+              </div>
+            </Link>
           ))}
         </div>
       </div>
