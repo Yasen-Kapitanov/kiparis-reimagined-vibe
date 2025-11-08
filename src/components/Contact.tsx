@@ -7,7 +7,7 @@ export const Contact = () => {
       icon: <Phone className="w-6 h-6" />,
       title: "Телефон",
       content: "02 846 55 24",
-      link: "tel:0028465524",
+      link: "tel:028465524",
     },
     {
       icon: <Clock className="w-6 h-6" />,
@@ -22,8 +22,8 @@ export const Contact = () => {
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Имейл",
-      content: "info@kiparisbg.com",
-      link: "mailto:info@kiparisbg.com",
+      content: "kiparis2000@abv.bg",
+      link: "mailto:kiparis2000@abv.bg",
     },
   ];
 
@@ -71,6 +71,7 @@ export const Contact = () => {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               title="Локация на Траурна Агенция Кипарис"
+              aria-label="Карта с локацията на Траурна Агенция Кипарис"
             />
           </div>
         </div>

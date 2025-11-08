@@ -23,7 +23,7 @@ export const Footer = () => {
                 <Phone className="w-5 h-5 text-secondary flex-shrink-0" />
                 <div>
                   <p className="font-semibold">Телефон:</p>
-                  <a href="tel:0028465524" className="text-muted-foreground hover:text-secondary transition-colors">
+                  <a href="tel:028465524" className="text-muted-foreground hover:text-secondary transition-colors">
                     02 846 55 24 (Денонощно)
                   </a>
                 </div>
@@ -32,8 +32,8 @@ export const Footer = () => {
                 <Mail className="w-5 h-5 text-secondary flex-shrink-0" />
                 <div>
                   <p className="font-semibold">Имейл:</p>
-                  <a href="mailto:info@kiparisbg.com" className="text-muted-foreground hover:text-secondary transition-colors">
-                    info@kiparisbg.com
+                  <a href="mailto:kiparis2000@abv.bg" className="text-muted-foreground hover:text-secondary transition-colors">
+                    kiparis2000@abv.bg
                   </a>
                 </div>
               </div>
@@ -43,7 +43,7 @@ export const Footer = () => {
           {/* Google Maps */}
           <div className="w-full h-[250px] md:h-[300px] rounded-lg overflow-hidden shadow-lg">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2933.2!2d23.3206!3d42.6954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40aa85776f96dc15%3A0x123456789!2z0YPQuy4g4oCe0J_RgNC-0YTQtdGB0L7RgCDQkNGB0LXQvSDQl9C70LDRgtCw0YDQvtCy4oCcIOKEljgsINCh0L7RhNC40Y8!5e0!3m2!1sbg!2sbg!4v1234567890"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2933.2!2d23.3206!3d42.6954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40aa85776f96dc15%3A0x123456789!2z0YPQuy4g4oCe0J/RgNC-0YTQtdGB0L7RgCDQkNGB0LXQvSDQl9C70LDRgtCw0YDQvtCy4oCcIOKEljgsINCh0L7RhNC40Y4!5e0!3m2!1sbg!2sbg!4v1234567890"
               width="100%"
               height="100%"
               style={{ border: 0 }}
@@ -51,6 +51,7 @@ export const Footer = () => {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               title="Локация на Траурна Агенция Кипарис"
+              aria-label="Карта с локацията на Траурна Агенция Кипарис"
             />
           </div>
         </div>

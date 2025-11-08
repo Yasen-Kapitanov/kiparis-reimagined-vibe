@@ -22,12 +22,12 @@ export const Navigation = () => {
     <>
       {/* Fixed Call Button - Mobile Only */}
       <a
-        href="tel:0028465524"
+        href="tel:028465524"
         className="lg:hidden fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-secondary text-secondary-foreground px-6 py-4 rounded-full shadow-2xl hover:shadow-xl transition-all duration-300 hover:scale-105 active:scale-95"
         aria-label="Обадете се сега"
       >
         <Phone className="h-6 w-6" />
-        <span className="font-bold text-base">ОБАДИ СЕ</span>
+        <span className="font-bold text-sm">ДЕНОНОЩНО: 02 846 55 24</span>
       </a>
 
       <nav className="sticky top-0 z-50 w-full bg-primary/95 backdrop-blur-sm border-b border-border shadow-md">
@@ -43,7 +43,7 @@ export const Navigation = () => {
             {/* Phone - Desktop */}
             <div className="hidden lg:flex items-center gap-2">
               <Phone className="h-5 w-5 text-secondary" />
-              <a href="tel:0028465524" className="text-lg font-semibold hover:text-secondary transition-colors">
+              <a href="tel:028465524" className="text-lg font-semibold hover:text-secondary transition-colors">
                 ДЕНОНОЩНО: 02 846 55 24
               </a>
             </div>
@@ -91,7 +91,7 @@ export const Navigation = () => {
               </Link>
             ))}
             <div className="pt-3 border-t border-border">
-              <a href="tel:0028465524" className="flex items-center gap-2 text-secondary font-semibold">
+              <a href="tel:028465524" className="flex items-center gap-2 text-secondary font-semibold">
                 <Phone className="h-4 w-4" />
                 ДЕНОНОЩНО: 02 846 55 24
               </a>
