@@ -3,7 +3,7 @@ import { Phone, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Link } from "react-router-dom";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo-kunapuc.png";
 
 export const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,7 +24,7 @@ export const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo and Title */}
           <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-            <img src={logo} alt="Кипарис Траурна Агенция" className="h-12 w-auto" />
+            <img src={logo} alt="Кипарис Траурна Агенция" className="h-14 w-auto" />
           </Link>
 
           {/* Phone - Desktop */}
