@@ -10,10 +10,12 @@ export const Navigation = () => {
 
   const navItems = [
     { label: "Начало", href: "/" },
-    { label: "Погребални Услуги", href: "/funeral-services" },
+    { label: "Погребение", href: "/pogrebenie" },
+    { label: "Кремация", href: "/kremacia" },
+    { label: "Превоз на Покойник", href: "/transport-na-pokojnik" },
+    { label: "Надгробни Паметници", href: "/nadgrobni-pametnici" },
     { label: "Венци", href: "/wreaths" },
-    { label: "Траурни Венци, Пиафлори И Букети", href: "/flowers" },
-    { label: "Надгробни Паметници", href: "/monuments" },
+    { label: "Цветя и Букети", href: "/flowers" },
     { label: "Контакти", href: "/contact" },
     { label: "Блог", href: "/blog" },
   ];
