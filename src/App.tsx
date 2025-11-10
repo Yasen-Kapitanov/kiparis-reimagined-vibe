@@ -34,7 +34,8 @@ const App = () => (
           {/* Other pages */}
           <Route path="/wreaths" element={<Wreaths />} />
           <Route path="/flowers" element={<Flowers />} />
-          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/kontakti" element={<ContactPage />} />
+          <Route path="/contact" element={<Navigate to="/kontakti" replace />} />
           <Route path="/blog" element={<Blog />} />
           
           {/* 301 Redirects from old English slugs to BG slugs */}
