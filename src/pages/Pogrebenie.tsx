@@ -11,6 +11,9 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
 import { useState } from "react";
+import churchBackground from "@/assets/church-background.png";
+import coffinEkonomichen from "@/assets/coffin-ekonomichen.jpg";
+import coffinLuksozen from "@/assets/coffin-luksozen.jpg";
 
 const Pogrebenie = () => {
   const [openPackage1, setOpenPackage1] = useState(false);
@@ -95,7 +98,16 @@ const Pogrebenie = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="py-16 md:py-24 bg-background">
+      <section 
+        className="py-16 md:py-24 relative bg-background"
+        style={{
+          backgroundImage: `linear-gradient(to bottom, #1b2b1b 0%, rgba(27, 43, 27, 0.85) 30%, rgba(27, 43, 27, 0.4) 70%, transparent 100%), linear-gradient(rgba(0, 20, 0, 0.65), rgba(0, 20, 0, 0.65)), url(${churchBackground})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center 40%',
+          backgroundAttachment: window.innerWidth >= 768 ? 'fixed' : 'scroll',
+          backgroundBlendMode: 'normal, overlay, normal'
+        }}
+      >
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Погребение в София</h1>
@@ -107,7 +119,14 @@ const Pogrebenie = () => {
           {/* Package Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-8">
             {/* Package 1 - Икономичен */}
-            <Card className="border-border bg-card hover:shadow-xl transition-all duration-300">
+            <Card 
+              className="border-border bg-card hover:shadow-xl transition-all duration-300 relative overflow-hidden"
+              style={{
+                backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85)), url(${coffinEkonomichen})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center'
+              }}
+            >
               <CardHeader>
                 <CardTitle className="text-2xl md:text-3xl">Икономичен пакет</CardTitle>
                 <div className="text-3xl md:text-4xl font-bold text-secondary mt-4">1512 лв с ДДС</div>
@@ -140,7 +159,14 @@ const Pogrebenie = () => {
             </Card>
 
             {/* Package 2 - Луксозен */}
-            <Card className="border-border bg-card hover:shadow-xl transition-all duration-300">
+            <Card 
+              className="border-border bg-card hover:shadow-xl transition-all duration-300 relative overflow-hidden"
+              style={{
+                backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85)), url(${coffinLuksozen})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center'
+              }}
+            >
               <CardHeader>
                 <CardTitle className="text-2xl md:text-3xl">Луксозен пакет</CardTitle>
                 <div className="text-3xl md:text-4xl font-bold text-secondary mt-4">2769 лв с ДДС</div>
