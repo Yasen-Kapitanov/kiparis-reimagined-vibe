@@ -183,7 +183,7 @@ const Pogrebenie = () => {
           {/* Steps Section */}
           <div className="mt-20">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Как протича процесът</h2>
-          <div className="grid grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
             {steps.map((step, index) => (
                 <Card key={index} className="border-border bg-card hover:shadow-xl transition-all duration-300">
                   <CardHeader>
@@ -201,7 +201,7 @@ const Pogrebenie = () => {
           {/* Trust Section */}
           <div className="mt-20">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Защо да изберете нас</h2>
-          <div className="grid grid-cols-3 md:grid-cols-3 gap-4 md:gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 max-w-4xl mx-auto">
             {trustPoints.map((point, index) => (
                 <Card key={index} className="text-center border-border bg-card hover:shadow-xl transition-all duration-300">
                   <CardHeader>
