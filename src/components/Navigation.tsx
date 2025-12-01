@@ -36,9 +36,9 @@ export const Navigation = () => {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-              <div className="p-2 bg-background rounded-lg border-2 border-border shadow-sm">
-                <img src={logo} alt="Кипарис Траурна Агенция" className="h-8 md:h-10 w-auto" />
+            <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity py-1">
+              <div className="bg-transparent rounded">
+                <img src={logo} alt="Кипарис Траурна Агенция" className="h-12 w-auto max-h-[50px] rounded" />
               </div>
             </Link>
 
