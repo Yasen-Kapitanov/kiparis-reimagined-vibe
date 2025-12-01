@@ -1,7 +1,7 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Phone, FileCheck, MapPin, TruckIcon, Church, Heart, Shield, Clock, HandshakeIcon, ChevronDown } from "lucide-react";
+import { Phone, FileCheck, MapPin, TruckIcon, Church, Heart, ChevronDown } from "lucide-react";
 import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -14,6 +14,7 @@ import { useState } from "react";
 import churchBackground from "@/assets/church-background.png";
 import coffinEkonomichen from "@/assets/coffin-ekonomichen.jpg";
 import coffinLuksozen from "@/assets/coffin-luksozen.jpg";
+import churchTable from "@/assets/church-table.png";
 
 const Pogrebenie = () => {
   const [openPackage1, setOpenPackage1] = useState(false);
@@ -88,28 +89,6 @@ const Pogrebenie = () => {
     }
   ];
 
-  const trustPoints = [
-    {
-      icon: <Shield className="w-8 h-8" />,
-      title: "Над 20 години опит"
-    },
-    {
-      icon: <Clock className="w-8 h-8" />,
-      title: "Денонощно обслужване"
-    },
-    {
-      icon: <HandshakeIcon className="w-8 h-8" />,
-      title: "Прозрачни цени"
-    }
-  ];
-
-  const relatedLinks = [
-    { label: "Кремация", url: "/kremacia" },
-    { label: "Превоз на покойник", url: "/transport-na-pokojnik" },
-    { label: "Венци и букети", url: "/venci" },
-    { label: "Ковчези", url: "/kovchezi" },
-    { label: "Надгробни паметници", url: "/nadgrobni-pametnici" }
-  ];
 
   return (
     <div className="min-h-screen">
@@ -142,15 +121,27 @@ const Pogrebenie = () => {
             </p>
           </div>
 
-          {/* SEO Article Section */}
-          <article className="max-w-4xl mx-auto mb-16 text-center">
-            <h2 className="text-2xl md:text-3xl font-bold mb-6">Пълна организация на погребение в София</h2>
-            <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-4">
-              Траурна агенция Кипарис предлага пълно денонощно съдействие: от констатиране на смърт и издаване на смъртен акт до организацията на ритуала. Работим с всички гробищни паркове в София (Централни софийски гробища, Малашевци, Бакърена фабрика, Бояна и др.).
-            </p>
-            <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-              Нашият екип поема цялата грижа за транспорта, избора на ковчег и заплащането на общинските такси, за да можете да изпратите близкия си с достойнство и спокойствие, без административни тежести.
-            </p>
+          {/* SEO Article Section - 2 Column */}
+          <article className="max-w-5xl mx-auto mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+              <div className="text-left">
+                <h2 className="text-2xl md:text-3xl font-bold mb-6">Пълна организация на погребение в София</h2>
+                <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-4">
+                  Траурна агенция Кипарис предлага пълно денонощно съдействие: от констатиране на смърт и издаване на смъртен акт до организацията на ритуала. Работим с всички гробищни паркове в София (Централни софийски гробища, Малашевци, Бакърена фабрика, Бояна и др.).
+                </p>
+                <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+                  Нашият екип поема цялата грижа за транспорта, избора на ковчег и заплащането на общинските такси, за да можете да изпратите близкия си с достойнство и спокойствие, без административни тежести.
+                </p>
+              </div>
+              <div className="flex justify-center">
+                <img 
+                  src={churchTable} 
+                  alt="Ритуална трапеза в църква - погребение София" 
+                  className="rounded-lg shadow-lg w-full max-w-md object-cover"
+                  loading="lazy"
+                />
+              </div>
+            </div>
           </article>
 
           {/* Package Cards */}
@@ -241,9 +232,32 @@ const Pogrebenie = () => {
             </Card>
           </div>
 
-          <p className="text-center text-lg font-semibold text-foreground mb-16">
+          <p className="text-center text-lg font-semibold text-foreground mb-12">
             Реална крайна цена, без скрити такси.
           </p>
+
+          {/* Necessary Documents Section */}
+          <section className="max-w-4xl mx-auto mb-16">
+            <h2 className="text-2xl md:text-3xl font-bold text-center mb-6 text-foreground">Необходими документи за погребение</h2>
+            <ul className="space-y-3 text-base md:text-lg text-muted-foreground">
+              <li className="flex items-start gap-3">
+                <FileCheck className="w-5 h-5 text-secondary mt-1 flex-shrink-0" />
+                <span>Съобщение за смърт (издава се от личния лекар или спешна помощ).</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <FileCheck className="w-5 h-5 text-secondary mt-1 flex-shrink-0" />
+                <span>Лична карта на починалия.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <FileCheck className="w-5 h-5 text-secondary mt-1 flex-shrink-0" />
+                <span>Лична карта на заявителя на погребението.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <FileCheck className="w-5 h-5 text-secondary mt-1 flex-shrink-0" />
+                <span>Ако починалият е в болница – медицинско свидетелство за смърт.</span>
+              </li>
+            </ul>
+          </section>
 
           {/* Steps Section */}
           <div className="mt-20">
@@ -263,37 +277,6 @@ const Pogrebenie = () => {
             </div>
           </div>
 
-          {/* Trust Section */}
-          <div className="mt-20">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Защо да изберете нас</h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 max-w-4xl mx-auto">
-            {trustPoints.map((point, index) => (
-                <Card key={index} className="text-center border-border bg-card hover:shadow-xl transition-all duration-300">
-                  <CardHeader>
-                    <div className="mx-auto mb-3 text-secondary">{point.icon}</div>
-                    <CardTitle className="text-lg">{point.title}</CardTitle>
-                  </CardHeader>
-                </Card>
-              ))}
-            </div>
-          </div>
-
-          {/* Related Links */}
-          <div className="mt-20">
-            <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">Вижте още наши услуги</h2>
-            <div className="flex flex-wrap justify-center gap-4">
-              {relatedLinks.map((link, index) => (
-                <Button 
-                  key={index} 
-                  variant="outline" 
-                  asChild
-                  className="hover:bg-secondary hover:text-secondary-foreground transition-all"
-                >
-                  <Link to={link.url}>{link.label}</Link>
-                </Button>
-              ))}
-            </div>
-          </div>
 
           {/* Local SEO Block */}
           <div className="mt-20 text-center max-w-2xl mx-auto">
