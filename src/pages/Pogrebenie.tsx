@@ -20,8 +20,33 @@ const Pogrebenie = () => {
   const [openPackage2, setOpenPackage2] = useState(false);
 
   const offers = [
-    { name: "Икономичен пакет", price: "1512", priceCurrency: "BGN" },
-    { name: "Луксозен пакет", price: "2769", priceCurrency: "BGN" }
+    { name: "Икономичен пакет", price: "773", priceCurrency: "EUR" },
+    { name: "Луксозен пакет", price: "1415", priceCurrency: "EUR" }
+  ];
+
+  const productSchema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Икономичен пакет Погребение",
+      "description": "Пълна организация на погребение в София - икономичен пакет.",
+      "offers": {
+        "@type": "Offer",
+        "price": "773",
+        "priceCurrency": "EUR"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Луксозен пакет Погребение",
+      "description": "Пълна организация на погребение в София - луксозен пакет.",
+      "offers": {
+        "@type": "Offer",
+        "price": "1415",
+        "priceCurrency": "EUR"
+      }
+    }
   ];
 
   const breadcrumbs = [
@@ -95,6 +120,7 @@ const Pogrebenie = () => {
         offers={offers}
         breadcrumbs={breadcrumbs}
       />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }} />
       <Navigation />
       
       {/* Hero Section */}
@@ -116,6 +142,17 @@ const Pogrebenie = () => {
             </p>
           </div>
 
+          {/* SEO Article Section */}
+          <article className="max-w-4xl mx-auto mb-16 text-center">
+            <h2 className="text-2xl md:text-3xl font-bold mb-6">Пълна организация на погребение в София</h2>
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-4">
+              Траурна агенция Кипарис предлага пълно денонощно съдействие: от констатиране на смърт и издаване на смъртен акт до организацията на ритуала. Работим с всички гробищни паркове в София (Централни софийски гробища, Малашевци, Бакърена фабрика, Бояна и др.).
+            </p>
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+              Нашият екип поема цялата грижа за транспорта, избора на ковчег и заплащането на общинските такси, за да можете да изпратите близкия си с достойнство и спокойствие, без административни тежести.
+            </p>
+          </article>
+
           {/* Package Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-8">
             {/* Package 1 - Икономичен */}
@@ -129,7 +166,8 @@ const Pogrebenie = () => {
             >
               <CardHeader>
                 <CardTitle className="text-2xl md:text-3xl">Икономичен пакет</CardTitle>
-                <div className="text-3xl md:text-4xl font-bold text-secondary mt-4">1512 лв с ДДС</div>
+                <div className="text-3xl md:text-4xl font-bold text-secondary mt-4">773 EUR</div>
+                <p className="text-xs md:text-sm text-secondary/80 font-medium mt-2">Крайна цена без скрити такси</p>
                 <p className="text-sm text-muted-foreground mt-2">При нов гроб се изисква дървена каса.</p>
               </CardHeader>
               <CardContent>
@@ -169,7 +207,8 @@ const Pogrebenie = () => {
             >
               <CardHeader>
                 <CardTitle className="text-2xl md:text-3xl">Луксозен пакет</CardTitle>
-                <div className="text-3xl md:text-4xl font-bold text-secondary mt-4">2769 лв с ДДС</div>
+                <div className="text-3xl md:text-4xl font-bold text-secondary mt-4">1415 EUR</div>
+                <p className="text-xs md:text-sm text-secondary/80 font-medium mt-2">Крайна цена без скрити такси</p>
                 <p className="text-sm text-muted-foreground mt-2">Включва опело в църква и осигуряване на безплатно ново гробно място.</p>
               </CardHeader>
               <CardContent>
