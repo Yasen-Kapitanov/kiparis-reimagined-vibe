@@ -123,32 +123,28 @@ const Pogrebenie = () => {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }} />
       <Navigation />
       
-      {/* Hero Section - Image Only */}
+      {/* Hero Section */}
       <section 
-        className="relative py-20 md:py-28"
+        className="py-16 md:py-24 relative bg-background"
         style={{
-          backgroundImage: `linear-gradient(to bottom, rgba(27, 43, 27, 0.7) 0%, rgba(27, 43, 27, 0.85) 100%), url(${churchBackground})`,
+          backgroundImage: `linear-gradient(to bottom, #1b2b1b 0%, rgba(27, 43, 27, 0.85) 30%, rgba(27, 43, 27, 0.4) 70%, transparent 100%), linear-gradient(rgba(0, 20, 0, 0.65), rgba(0, 20, 0, 0.65)), url(${churchBackground})`,
           backgroundSize: 'cover',
-          backgroundPosition: 'center top',
-          backgroundRepeat: 'no-repeat'
+          backgroundPosition: 'center 40%',
+          backgroundAttachment: window.innerWidth >= 768 ? 'fixed' : 'scroll',
+          backgroundBlendMode: 'normal, overlay, normal'
         }}
       >
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">Погребение в София</h1>
-            <p className="text-lg md:text-xl text-white/90 leading-relaxed">
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Погребение в София</h1>
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
               Поемаме пълната организация с уважение и точност. Предлагаме денонощна консултация и съдействие на близките в трудния момент.
             </p>
           </div>
-        </div>
-      </section>
 
-      {/* Main Content Section - Solid Background */}
-      <section className="py-16 md:py-20" style={{ backgroundColor: '#F5F5F0' }}>
-        <div className="container mx-auto px-4">
           {/* SEO Article Section */}
           <article className="max-w-4xl mx-auto mb-16 text-center">
-            <h2 className="text-2xl md:text-3xl font-bold mb-6 text-foreground">Пълна организация на погребение в София</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-6">Пълна организация на погребение в София</h2>
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-4">
               Траурна агенция Кипарис предлага пълно денонощно съдействие: от констатиране на смърт и издаване на смъртен акт до организацията на ритуала. Работим с всички гробищни паркове в София (Централни софийски гробища, Малашевци, Бакърена фабрика, Бояна и др.).
             </p>
@@ -161,7 +157,7 @@ const Pogrebenie = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-8">
             {/* Package 1 - Икономичен */}
             <Card 
-              className="border-border hover:shadow-xl transition-all duration-300 relative overflow-hidden"
+              className="border-border bg-card hover:shadow-xl transition-all duration-300 relative overflow-hidden"
               style={{
                 backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85)), url(${coffinEkonomichen})`,
                 backgroundSize: 'cover',
@@ -169,19 +165,19 @@ const Pogrebenie = () => {
               }}
             >
               <CardHeader>
-                <CardTitle className="text-2xl md:text-3xl text-white">Икономичен пакет</CardTitle>
+                <CardTitle className="text-2xl md:text-3xl">Икономичен пакет</CardTitle>
                 <div className="text-3xl md:text-4xl font-bold text-secondary mt-4">773 EUR</div>
                 <p className="text-xs md:text-sm text-secondary/80 font-medium mt-2">Крайна цена без скрити такси</p>
-                <p className="text-sm text-white/70 mt-2">При нов гроб се изисква дървена каса.</p>
+                <p className="text-sm text-muted-foreground mt-2">При нов гроб се изисква дървена каса.</p>
               </CardHeader>
               <CardContent>
                 <Collapsible open={openPackage1} onOpenChange={setOpenPackage1}>
-                  <CollapsibleTrigger className="flex items-center justify-between w-full text-left font-medium text-white hover:text-secondary transition-colors">
+                  <CollapsibleTrigger className="flex items-center justify-between w-full text-left font-medium hover:text-secondary transition-colors">
                     Виж всичко включено
                     <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${openPackage1 ? 'rotate-180' : ''}`} />
                   </CollapsibleTrigger>
                   <CollapsibleContent className="mt-4">
-                    <ul className="space-y-2 text-sm text-white/80">
+                    <ul className="space-y-2 text-sm text-muted-foreground">
                       <li>• Административно обслужване и общински такси</li>
                       <li>• Изваждане на акт за смърт</li>
                       <li>• Оформяне на документи и вписване в регистър</li>
@@ -202,7 +198,7 @@ const Pogrebenie = () => {
 
             {/* Package 2 - Луксозен */}
             <Card 
-              className="border-border hover:shadow-xl transition-all duration-300 relative overflow-hidden"
+              className="border-border bg-card hover:shadow-xl transition-all duration-300 relative overflow-hidden"
               style={{
                 backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85)), url(${coffinLuksozen})`,
                 backgroundSize: 'cover',
@@ -210,19 +206,19 @@ const Pogrebenie = () => {
               }}
             >
               <CardHeader>
-                <CardTitle className="text-2xl md:text-3xl text-white">Луксозен пакет</CardTitle>
+                <CardTitle className="text-2xl md:text-3xl">Луксозен пакет</CardTitle>
                 <div className="text-3xl md:text-4xl font-bold text-secondary mt-4">1415 EUR</div>
                 <p className="text-xs md:text-sm text-secondary/80 font-medium mt-2">Крайна цена без скрити такси</p>
-                <p className="text-sm text-white/70 mt-2">Включва опело в църква и осигуряване на безплатно ново гробно място.</p>
+                <p className="text-sm text-muted-foreground mt-2">Включва опело в църква и осигуряване на безплатно ново гробно място.</p>
               </CardHeader>
               <CardContent>
                 <Collapsible open={openPackage2} onOpenChange={setOpenPackage2}>
-                  <CollapsibleTrigger className="flex items-center justify-between w-full text-left font-medium text-white hover:text-secondary transition-colors">
+                  <CollapsibleTrigger className="flex items-center justify-between w-full text-left font-medium hover:text-secondary transition-colors">
                     Виж всичко включено
                     <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${openPackage2 ? 'rotate-180' : ''}`} />
                   </CollapsibleTrigger>
                   <CollapsibleContent className="mt-4">
-                    <ul className="space-y-2 text-sm text-white/80">
+                    <ul className="space-y-2 text-sm text-muted-foreground">
                       <li>• Административни дейности и организация на агенцията за целия процес</li>
                       <li>• Резервация ден и час и гробно място, вписване в регистъра</li>
                       <li>• Катафалка и вътрешен транспорт по изискване на парковете</li>
@@ -251,9 +247,9 @@ const Pogrebenie = () => {
 
           {/* Steps Section */}
           <div className="mt-20">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-foreground">Как протича процесът</h2>
-            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
-              {steps.map((step, index) => (
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Как протича процесът</h2>
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+            {steps.map((step, index) => (
                 <Card key={index} className="border-border bg-card hover:shadow-xl transition-all duration-300">
                   <CardHeader>
                     <div className="mb-4 text-secondary">{step.icon}</div>
@@ -269,9 +265,9 @@ const Pogrebenie = () => {
 
           {/* Trust Section */}
           <div className="mt-20">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-foreground">Защо да изберете нас</h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 max-w-4xl mx-auto">
-              {trustPoints.map((point, index) => (
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Защо да изберете нас</h2>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 max-w-4xl mx-auto">
+            {trustPoints.map((point, index) => (
                 <Card key={index} className="text-center border-border bg-card hover:shadow-xl transition-all duration-300">
                   <CardHeader>
                     <div className="mx-auto mb-3 text-secondary">{point.icon}</div>
@@ -284,7 +280,7 @@ const Pogrebenie = () => {
 
           {/* Related Links */}
           <div className="mt-20">
-            <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 text-foreground">Вижте още наши услуги</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">Вижте още наши услуги</h2>
             <div className="flex flex-wrap justify-center gap-4">
               {relatedLinks.map((link, index) => (
                 <Button 
@@ -301,7 +297,7 @@ const Pogrebenie = () => {
 
           {/* Local SEO Block */}
           <div className="mt-20 text-center max-w-2xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4 text-foreground">Обслужваме София и района Оборище</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">Обслужваме София и района Оборище</h2>
             <p className="text-lg text-muted-foreground mb-6">
               Обслужваме София и района Оборище. Вижте контактите и картата.
             </p>
