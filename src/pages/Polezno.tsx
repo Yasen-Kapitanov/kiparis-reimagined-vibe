@@ -1,13 +1,15 @@
 import { Helmet } from "react-helmet";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-import { Phone } from "lucide-react";
+import { Phone, FileText, Download } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Button } from "@/components/ui/button";
+import poleznoHero from "@/assets/polezno-hero.png";
 
 const Polezno = () => {
   const scenarioFaqs = [
@@ -50,6 +52,34 @@ const Polezno = () => {
 
   const allFaqs = [...scenarioFaqs, ...additionalFaqs];
 
+  const documents = [
+    {
+      title: "Декларация за съгласие за кремация",
+      subtitle: "Задължителна за попълване от всички преки наследници.",
+      file: "/files/deklaracia-saglasie-kremacia-sofia.pdf"
+    },
+    {
+      title: "Заявление за помощ от НОИ (Образец)",
+      subtitle: "Бланка за получаване на еднократна помощ при смърт.",
+      file: "/files/molba-pomosht-pri-smart-noi-obrazec.pdf"
+    },
+    {
+      title: "Декларация за идентичност на имена",
+      subtitle: "При разминаване на имената в личните документи на починалия.",
+      file: "/files/deklaracia-identichnost-imena-obrazec.pdf"
+    },
+    {
+      title: "Декларация за получаване на урна",
+      subtitle: "Необходима при взимане на урната от крематориума или агенцията.",
+      file: "/files/deklaracia-urna.pdf"
+    },
+    {
+      title: "Молба за Удостоверение за наследници",
+      subtitle: "Бланка за общината. Изисква се за всички имотни и банкови процедури.",
+      file: "/files/molba-naslednici.pdf"
+    }
+  ];
+
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -84,13 +114,20 @@ const Polezno = () => {
       <Navigation />
       
       <main className="flex-1">
-        {/* Hero Section */}
-        <section className="bg-primary py-12 md:py-16">
+        {/* Hero Section with Background Image */}
+        <section 
+          className="relative py-16 md:py-20"
+          style={{
+            backgroundImage: `linear-gradient(rgba(0, 20, 0, 0.7), rgba(0, 20, 0, 0.7)), url(${poleznoHero})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center'
+          }}
+        >
           <div className="container mx-auto px-4">
-            <h1 className="text-2xl md:text-4xl font-bold text-center mb-4">
+            <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-center mb-4 text-white">
               Какво да правим при смъртен случай?
             </h1>
-            <p className="text-center text-muted-foreground text-sm md:text-base max-w-2xl mx-auto">
+            <p className="text-center text-white/80 text-sm md:text-base max-w-2xl mx-auto">
               Стъпка по стъпка наръчник за действие в трудни моменти
             </p>
           </div>
@@ -106,6 +143,70 @@ const Polezno = () => {
               <Phone className="h-5 w-5" />
               Денонощна помощ: 02 846 55 24
             </a>
+          </div>
+        </section>
+
+        {/* Downloads Section */}
+        <section className="py-8 md:py-12 bg-muted/30">
+          <div className="container mx-auto px-4">
+            <h2 className="text-xl md:text-2xl font-bold mb-6 text-center">
+              Полезни документи и бланки
+            </h2>
+            <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto text-sm md:text-base">
+              Изтеглете необходимите формуляри за погребални и административни процедури
+            </p>
+            
+            {/* Desktop: 3-column grid, Mobile: 1-column */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 max-w-5xl mx-auto">
+              {documents.slice(0, 3).map((doc, index) => (
+                <div 
+                  key={index}
+                  className="bg-card rounded-lg p-5 shadow-md border border-border hover:shadow-lg transition-shadow"
+                >
+                  <div className="flex flex-col items-center text-center">
+                    <FileText className="h-12 w-12 text-accent mb-3" />
+                    <h3 className="font-semibold text-sm md:text-base mb-2 text-foreground">
+                      {doc.title}
+                    </h3>
+                    <p className="text-xs md:text-sm text-muted-foreground mb-4">
+                      {doc.subtitle}
+                    </p>
+                    <Button asChild variant="outline" size="sm" className="w-full">
+                      <a href={doc.file} download className="inline-flex items-center justify-center gap-2">
+                        <Download className="h-4 w-4" />
+                        Свали PDF
+                      </a>
+                    </Button>
+                  </div>
+                </div>
+              ))}
+            </div>
+            
+            {/* Bottom row: 2 cards centered */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-3xl mx-auto mt-4 md:mt-6">
+              {documents.slice(3).map((doc, index) => (
+                <div 
+                  key={index + 3}
+                  className="bg-card rounded-lg p-5 shadow-md border border-border hover:shadow-lg transition-shadow"
+                >
+                  <div className="flex flex-col items-center text-center">
+                    <FileText className="h-12 w-12 text-accent mb-3" />
+                    <h3 className="font-semibold text-sm md:text-base mb-2 text-foreground">
+                      {doc.title}
+                    </h3>
+                    <p className="text-xs md:text-sm text-muted-foreground mb-4">
+                      {doc.subtitle}
+                    </p>
+                    <Button asChild variant="outline" size="sm" className="w-full">
+                      <a href={doc.file} download className="inline-flex items-center justify-center gap-2">
+                        <Download className="h-4 w-4" />
+                        Свали PDF
+                      </a>
+                    </Button>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
