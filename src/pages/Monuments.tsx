@@ -177,8 +177,8 @@ const Monuments = () => {
             </TabsList>
           </Tabs>
 
-          {/* Mobile: 1 column, Desktop: 2-3 columns */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 mb-16">
+          {/* Mobile: 2 columns, Desktop: 2-3 columns */}
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-8 mb-16">
             {filteredMonuments.map((monument) => (
               <Card 
                 key={monument.id} 
@@ -191,11 +191,11 @@ const Monuments = () => {
                     alt={monument.alt}
                     className="w-full h-full object-cover md:group-hover:scale-105 transition-transform duration-500"
                   />
-                  {/* Gradient only at bottom - 20% height */}
+                  {/* Gradient only at bottom - 30% height */}
                   <div className="absolute bottom-0 left-0 right-0 h-[30%] bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
                   {/* Text overlay at bottom */}
-                  <div className="absolute bottom-0 left-0 right-0 p-4">
-                    <h3 className="text-base md:text-lg font-semibold text-white">{monument.title}</h3>
+                  <div className="absolute bottom-0 left-0 right-0 p-2 md:p-4">
+                    <h3 className="text-sm md:text-xl font-semibold text-white leading-tight">{monument.title}</h3>
                   </div>
                 </div>
               </Card>
